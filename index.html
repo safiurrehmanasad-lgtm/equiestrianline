@@ -1,1 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EquineWorld - Global Horse Breed Encyclopedia</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        equine: {
+                            dark: '#1e2d24',    /* Deep forest green */
+                            gold: '#c5a059',    /* Warm equestrian gold */
+                            cream: '#fcfaf2',   /* Soft off-white */
+                            earth: '#3d2b1f'    /* Rich leather brown */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fcfaf2;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="text-gray-800 min-h-screen flex flex-col">
+
+    <!-- Header / Navigation -->
+    <header class="bg-equine-dark text-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">🐎</span>
+                <div>
+                    <h1 class="text-xl font-bold tracking-wide text-equine-cream">EquineWorld</h1>
+                    <p class="text-xs text-equine-gold tracking-widest uppercase">The Global Breed Directory</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#" class="text-equine-gold border-b-2 border-equine-gold pb-1">Directory</a>
+                <a href="#" class="text-gray-300 hover:text-white transition">About Equines</a>
+                <a href="#" class="text-gray-300 hover:text-white transition">Conservation</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative bg-equine-earth text-white py-16 px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://unsplash.com');"></div>
+        <div class="relative max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-equine-cream">Discover the World's Horse Breeds</h2>
+            <p class="text-lg md:text-xl text-gray-200 font-light max-w-2xl mx-auto">
+                From ancient desert endurance runners to massive heavy draft giants, explore the history, traits, and beauty of global horse breeds.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
+        
+        <!-- Controls: Search & Filter -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
+            <!-- Search Input -->
+            <div class="relative w-full md:w-1/3">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">🔍</span>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search by breed name or origin..." 
+                    class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-equine-dark focus:bg-white transition"
+                >
+            </div>
+            <!-- Filter Dropdowns -->
+            <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+                <div class="w-full sm:w-48">
+                    <select 
+                        id="temperamentFilter" 
+                        class="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-equine-dark focus:bg-white transition text-sm"
+                    >
+                        <option value="">All Temperaments</option>
+                        <option value="Hot-blooded">Hot-blooded</option>
+                        <option value="Warm-blooded">Warm-blooded</option>
+                        <option value="Cold-blooded">Cold-blooded</option>
+                    </select>
+                </div>
+                <div class="w-full sm:w-48">
+                    <select 
+                        id="useFilter" 
+                        class="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-equine-dark focus:bg-white transition text-sm"
+                    >
+                        <option value="">All Primary Uses</option>
+                        <option value="Riding">Riding</option>
+                        <option value="Racing">Racing</option>
+                        <option value="Draft Work">Draft Work</option>
+                        <option value="Sports">Sports & Showing</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Directory Grid -->
+        <div id="breedGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic Cards injected by JavaScript -->
+        </div>
+
+        <!-- No Results Fallback -->
+        <div id="noResults" class="hidden text-center py-16">
+            <span class="text-5xl">🐴</span>
+            <h3 class="text-xl font-bold mt-4 text-gray-600">No breeds match your selection</h3>
+            <p class="text-gray-400 mt-1">Try resetting your search filters or phrase.</p>
+        </div>
+    </main>
+
+    <!-- Detailed Profile Modal Overlay -->
+    <div id="breedModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300" id="modalContainer">
+            <!-- Close Button -->
+            <button id="closeModal" class="absolute top-4 right-4 bg-white/80 backdrop-blur hover:bg-white text-gray-800 rounded-full p-2 shadow transition z-10 font-bold">✕</button>
+            
+            <!-- Modal Body Content -->
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-equine-dark text-gray-400 py-8 border-t border-gray-800 text-center text-sm">
+        <p>&copy; 2026 EquineWorld Project. Built for horse lovers worldwide.</p>
+    </footer>
+
+    <!-- Core Logic & Data Directory -->
+    <script>
+        // Internal Global Horse Breeds Database
+        const horseBreeds = [
+            {
+                name: "Arabian",
+                origin: "Arabian Peninsula",
+                height: "14.1 - 15.1 hands",
+                temperament: "Hot-blooded",
+                use: "Riding",
+                image: "https://unsplash.com",
+                desc: "One of the oldest human-developed breeds in the world. Renowned for their distinct chiseled head shape, high tail carriage, and legendary endurance capability across harsh desert climates."
+            },
+            {
+                name: "Thoroughbred",
+                origin: "United Kingdom",
+                height: "15.2 - 17.0 hands",
+                temperament: "Hot-blooded",
+                use: "Racing",
+                image: "https://unsplash.com",
+                desc: "Famous worldwide for its incredible speed, spirit, and athleticism. Developed in 17th-century England, they dominate the horse racing industry and excel in modern show jumping and dressage."
+            },
+            {
+                name: "Clydesdale",
+                origin: "Scotland",
+                height: "16.0 - 18.0 hands",
+                temperament: "Cold-blooded",
+                use: "Draft Work",
+                image: "https://unsplash.com",
+                desc: "A massive, powerful heavy draft horse instantly recognizable by the extensive silky white feathering on its lower legs. Docile giants prized for agricultural power and heavy pulling parade displays."
+            },
+            {
+                name: "Friesian",
+                origin: "Netherlands",
+                height: "15.3 - 16.0 hands",
+                temperament: "Warm-blooded",
+                use: "Sports",
+                image: "https://unsplash.com",
+                desc: "A majestic breed boasting a striking, completely black coat alongside long, thick, flowing manes and tails. Graceful and high-stepping, they are highly sought after for classical dressage and driving."
+            },
+            {
+                name: "American Quarter Horse",
+                origin: "United States",
+                height: "14.3 - 16.0 hands",
+                temperament: "Warm-blooded",
+                use: "Riding",
+                image: "https://unsplash.com",
 
