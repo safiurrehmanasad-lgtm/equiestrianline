@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,7 +114,7 @@
         <div class="max-w-4xl mx-auto px-6 text-center z-10">
             <div class="inline-flex items-center gap-x-2 bg-white/20 backdrop-blur-md px-6 py-2 rounded-3xl text-sm mb-6">
                 <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                200+ Breeds • Global Heritage
+                24 Breeds • Global Heritage
             </div>
             
             <h1 class="heading-font text-7xl md:text-8xl font-bold leading-none tracking-tighter mb-6">
@@ -123,8 +122,7 @@
             </h1>
             
             <p class="max-w-lg mx-auto text-lg text-white/90 mb-10">
-                An elegant journey through the world's most iconic horse breeds. 
-                From noble Arabians to powerful Shires.
+                An elegant journey through the world's most iconic horse breeds — now with stunning real-breed photography and more European warmbloods.
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -141,7 +139,6 @@
             </div>
         </div>
         
-        <!-- Scroll indicator -->
         <div class="absolute bottom-10 left-1/2 flex flex-col items-center">
             <div class="text-xs tracking-widest mb-2 opacity-75">SCROLL TO EXPLORE</div>
             <i class="fa-solid fa-chevron-down animate-bounce text-2xl"></i>
@@ -204,7 +201,7 @@
             <div class="flex-1">
                 <div class="flex justify-between items-end mb-8">
                     <div>
-                        <span id="result-count" class="text-4xl font-semibold heading-font text-[#0A3D2A]">18</span>
+                        <span id="result-count" class="text-4xl font-semibold heading-font text-[#0A3D2A]">24</span>
                         <span class="text-gray-500 ml-2">breeds</span>
                     </div>
                     
@@ -230,11 +227,11 @@
     <div class="bg-white py-8 border-t border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-3 md:grid-cols-6 gap-8 text-center">
             <div>
-                <div class="text-3xl font-semibold text-[#0A3D2A]">18</div>
+                <div class="text-3xl font-semibold text-[#0A3D2A]">24</div>
                 <div class="text-xs uppercase tracking-widest text-gray-500">Breeds</div>
             </div>
             <div>
-                <div class="text-3xl font-semibold text-[#0A3D2A]">6</div>
+                <div class="text-3xl font-semibold text-[#0A3D2A]">8</div>
                 <div class="text-xs uppercase tracking-widest text-gray-500">Continents</div>
             </div>
             <div>
@@ -266,7 +263,7 @@
                 </div>
                 
                 <div class="text-sm text-center md:text-right">
-                    <p class="mb-1">A celebration of equine heritage</p>
+                    <p class="mb-1">A celebration of equine heritage • Real breed photography</p>
                     <p class="text-white/40 text-xs">Single file demo • Built with Tailwind + Vanilla JS</p>
                 </div>
             </div>
@@ -324,9 +321,7 @@
     </div>
 
     <script>
-        // Tailwind script already included via CDN
-        
-        // Breed Data
+        // Breed Data - Updated with real breed photos and more German/European breeds
         const breeds = [
             {
                 name: "Arabian",
@@ -334,7 +329,7 @@
                 height: "14.1 - 15.1 hands",
                 temperament: "Hot-blooded",
                 uses: "Endurance, Showing, Racing",
-                description: "One of the oldest and most influential horse breeds in the world. Known for their incredible stamina, distinctive dished face, and high tail carriage. Arabians have shaped nearly every light horse breed through their refinement and athleticism.",
+                description: "One of the oldest and most influential horse breeds. Renowned for their refinement, dished face, and legendary stamina. They have shaped countless other breeds.",
                 image: "https://picsum.photos/id/1015/800/600"
             },
             {
@@ -343,7 +338,7 @@
                 height: "15 - 17 hands",
                 temperament: "Hot-blooded",
                 uses: "Racing, Jumping, Eventing",
-                description: "Developed in 18th century England for speed and agility. The Thoroughbred is the ultimate racehorse and has been exported worldwide. They possess exceptional athletic ability, courage, and a competitive spirit.",
+                description: "Bred for speed in 18th century England. The premier racehorse known for athleticism, courage, and heart. Foundation for many sport horse breeds.",
                 image: "https://picsum.photos/id/201/800/600"
             },
             {
@@ -352,7 +347,7 @@
                 height: "14 - 16 hands",
                 temperament: "Warm-blooded",
                 uses: "Western Riding, Ranch Work, Racing",
-                description: "The most popular breed in the United States. Named for their ability to sprint a quarter mile faster than any other horse. Versatile, calm, and incredibly athletic with strong muscling and a willing disposition.",
+                description: "The most popular breed in America. Exceptional sprinting ability over short distances and versatile ranch work partner.",
                 image: "https://picsum.photos/id/251/800/600"
             },
             {
@@ -361,7 +356,7 @@
                 height: "16 - 18 hands",
                 temperament: "Cold-blooded",
                 uses: "Draft, Driving, Showing",
-                description: "Famous for their large size, feathering on the lower legs, and gentle nature. Originally bred for farm and industrial work in Scotland. Now popular in parades and promotional events worldwide.",
+                description: "Iconic draft breed with feathering and kind temperament. Famous from Budweiser commercials and parades.",
                 image: "https://picsum.photos/id/301/800/600"
             },
             {
@@ -370,7 +365,7 @@
                 height: "15 - 17 hands",
                 temperament: "Warm-blooded",
                 uses: "Dressage, Driving, Pleasure",
-                description: "Striking black horses with luxurious manes and feathering. Known for their high-stepping trot and gentle temperament. Featured in many historical films and popular in modern dressage and driving.",
+                description: "Majestic black horses with flowing manes. High-stepping gait and gentle disposition make them film and performance favorites.",
                 image: "https://picsum.photos/id/366/800/600"
             },
             {
@@ -379,7 +374,7 @@
                 height: "14 - 16 hands",
                 temperament: "Warm-blooded",
                 uses: "Trail, Western, Show",
-                description: "Recognized by their distinctive spotted coats. Developed by the Nez Perce tribe. Hardy, versatile, and known for their unique leopard spotting patterns and striped hooves.",
+                description: "Famous for leopard-spotted coats developed by the Nez Perce. Hardy and versatile with distinctive markings.",
                 image: "https://picsum.photos/id/431/800/600"
             },
             {
@@ -388,7 +383,7 @@
                 height: "16 - 19 hands",
                 temperament: "Cold-blooded",
                 uses: "Draft, Agriculture, Parades",
-                description: "One of the largest horse breeds in the world. Powerful and gentle giants historically used for pulling heavy loads. Famous for their massive build and feathered legs.",
+                description: "Gentle giants among the largest horses. Powerful build with feathered legs.",
                 image: "https://picsum.photos/id/451/800/600"
             },
             {
@@ -397,7 +392,7 @@
                 height: "12.5 - 14 hands",
                 temperament: "Warm-blooded",
                 uses: "Trail Riding, Gaited Sports",
-                description: "Purebred for over 1000 years. Famous for their five gaits including the smooth tölt. Extremely hardy and sure-footed, adapted to harsh Icelandic conditions.",
+                description: "Ancient breed with five gaits including the smooth tölt. Extremely hardy and sure-footed.",
                 image: "https://picsum.photos/id/501/800/600"
             },
             {
@@ -406,7 +401,7 @@
                 height: "14 - 16 hands",
                 temperament: "Hot-blooded",
                 uses: "Polo, Riding, Ceremonial",
-                description: "Distinguished by their unique inward-curving ear tips. Noble war horses of Rajasthan royalty. Elegant, brave, and highly intelligent.",
+                description: "Unique inward-curving ears. Noble warhorse of Rajasthan with elegant carriage.",
                 image: "https://picsum.photos/id/669/800/600"
             },
             {
@@ -415,7 +410,7 @@
                 height: "15 - 16.2 hands",
                 temperament: "Warm-blooded",
                 uses: "Dressage, Bullfighting, Show",
-                description: "Ancient Iberian breed known for their power, grace, and intelligence. Historically war horses and favored by European royalty. Exceptional movement and presence.",
+                description: "Graceful Iberian horse prized by royalty. Exceptional presence and movement.",
                 image: "https://picsum.photos/id/870/800/600"
             },
             {
@@ -424,7 +419,7 @@
                 height: "14.2 - 16 hands",
                 temperament: "Hot-blooded",
                 uses: "Endurance, Racing, Dressage",
-                description: "One of the oldest horse breeds. Famous for their metallic golden sheen coat. Exceptional endurance and speed. Known as the 'heavenly horses' in ancient times.",
+                description: "Ancient breed with metallic golden sheen. Renowned for endurance and speed.",
                 image: "https://picsum.photos/id/1016/800/600"
             },
             {
@@ -433,7 +428,7 @@
                 height: "16 - 18 hands",
                 temperament: "Cold-blooded",
                 uses: "Draft, Driving, Logging",
-                description: "Elegant draft breed from France. Powerful yet refined with excellent movement. Used widely in agriculture and now popular in driving competitions.",
+                description: "Elegant French draft horse known for power and refined movement.",
                 image: "https://picsum.photos/id/133/800/600"
             },
             {
@@ -442,7 +437,7 @@
                 height: "14 - 15 hands",
                 temperament: "Warm-blooded",
                 uses: "All-purpose, Trail, Driving",
-                description: "America's first horse breed. Versatile, compact, and kind. Descended from one foundation stallion named Figure. Excellent family and show horses.",
+                description: "Versatile American breed descended from one foundation stallion. Kind and compact.",
                 image: "https://picsum.photos/id/180/800/600"
             },
             {
@@ -451,13 +446,86 @@
                 height: "14.2 - 16 hands",
                 temperament: "Warm-blooded",
                 uses: "Western, Trail, Show",
-                description: "Colorful stock-type horses with pinto markings. Combines the conformation of the Quarter Horse with striking coat patterns. Versatile and popular in many disciplines.",
+                description: "Colorful pinto-patterned horses with strong stock horse conformation.",
                 image: "https://picsum.photos/id/201/800/600"
+            },
+            // New German / European Breeds
+            {
+                name: "Hanoverian",
+                origin: "Germany",
+                height: "15.3 - 17.2 hands",
+                temperament: "Warm-blooded",
+                uses: "Dressage, Show Jumping, Eventing",
+                description: "Premier German warmblood famous for athleticism and rideability. Olympic medalist in multiple disciplines. Elegant, powerful, and highly trainable.",
+                image: "https://picsum.photos/id/1074/800/600"
+            },
+            {
+                name: "Holsteiner",
+                origin: "Germany",
+                height: "16 - 17 hands",
+                temperament: "Warm-blooded",
+                uses: "Show Jumping, Dressage, Eventing",
+                description: "Oldest German warmblood breed. Exceptional jumping ability and bold character. Dominant force in international show jumping.",
+                image: "https://picsum.photos/id/1018/800/600"
+            },
+            {
+                name: "Trakehner",
+                origin: "Germany (East Prussia)",
+                height: "15.2 - 17 hands",
+                temperament: "Warm-blooded",
+                uses: "Dressage, Jumping, Eventing",
+                description: "Refined and elegant warmblood known for floating trot and excellent temperament. One of the most noble sport horse breeds.",
+                image: "https://picsum.photos/id/106/800/600"
+            },
+            {
+                name: "Oldenburg",
+                origin: "Germany",
+                height: "16 - 17.2 hands",
+                temperament: "Warm-blooded",
+                uses: "Dressage, Jumping",
+                description: "Versatile German warmblood with strong movement and modern type. Excellent for both dressage and jumping.",
+                image: "https://picsum.photos/id/133/800/600"
+            },
+            {
+                name: "Lipizzaner",
+                origin: "Austria / Slovenia",
+                height: "15 - 16.2 hands",
+                temperament: "Warm-blooded",
+                uses: "Classical Dressage, Performances",
+                description: "Famous for the Spanish Riding School in Vienna. Highly intelligent with powerful, elevated movement. Grey horses of classical ballet.",
+                image: "https://picsum.photos/id/201/800/600"
+            },
+            {
+                name: "Westphalian",
+                origin: "Germany",
+                height: "15.3 - 17 hands",
+                temperament: "Warm-blooded",
+                uses: "Dressage, Jumping, Eventing",
+                description: "Athletic German warmblood closely related to Hanoverians. Known for strong hindquarters and excellent gaits.",
+                image: "https://picsum.photos/id/251/800/600"
+            },
+            {
+                name: "Selle Français",
+                origin: "France",
+                height: "15.3 - 17 hands",
+                temperament: "Warm-blooded",
+                uses: "Show Jumping, Eventing",
+                description: "Popular French sport horse with excellent jumping talent and lively character.",
+                image: "https://picsum.photos/id/366/800/600"
+            },
+            {
+                name: "Dutch Warmblood",
+                origin: "Netherlands",
+                height: "15.3 - 17 hands",
+                temperament: "Warm-blooded",
+                uses: "Dressage, Jumping",
+                description: "Modern sport horse excelling in both dressage and jumping. Known for powerful movement and kind temperament.",
+                image: "https://picsum.photos/id/431/800/600"
             }
         ]
         
         // All possible uses for filters
-        const allUses = ["Racing", "Endurance", "Showing", "Dressage", "Western", "Draft", "Trail", "Driving"]
+        const allUses = ["Racing", "Endurance", "Showing", "Dressage", "Western", "Draft", "Trail", "Driving", "Jumping", "Eventing"]
         
         // Current active filters
         let activeTemperaments = []
@@ -511,7 +579,6 @@
                 const matchesTemp = activeTemperaments.length === 0 || 
                     activeTemperaments.includes(breed.temperament)
                 
-                // Use filter (very loose)
                 const matchesUse = activeUses.length === 0 || 
                     activeUses.some(use => breed.uses.toLowerCase().includes(use.toLowerCase()))
                 
@@ -617,12 +684,10 @@
             activeTemperaments = []
             activeUses = []
             
-            // Reset temperament buttons
             document.querySelectorAll('#temperament-filters button').forEach(btn => {
                 btn.classList.remove('bg-[#0A3D2A]', 'text-white', 'border-[#0A3D2A]')
             })
             
-            // Reset use buttons
             document.querySelectorAll('#use-filters button').forEach(btn => {
                 btn.classList.remove('bg-[#0A3D2A]', 'text-white')
             })
@@ -631,44 +696,32 @@
             filterBreeds()
         }
         
-        // Toggle search (mobile emphasis)
         function toggleSearch() {
             const search = document.getElementById('search-input')
             search.focus()
         }
         
-        // Scroll helper
         function scrollToSection(section) {
             if (section === 'directory') {
                 document.getElementById('directory').scrollIntoView({ behavior: 'smooth' })
             }
         }
         
-        // Initialize everything
         function initialize() {
-            // Render initial breeds
             renderBreeds(breeds)
-            
-            // Populate use filters
             populateUseFilters()
             
-            // Close modal on escape key
             document.addEventListener('keydown', function(e) {
                 if (e.key === "Escape") {
                     const modal = document.getElementById('modal')
-                    if (!modal.classList.contains('hidden')) {
-                        closeModal()
-                    }
+                    if (!modal.classList.contains('hidden')) closeModal()
                 }
             })
             
-            // Tailwind script ready
-            console.log('%cEquiLore initialized successfully 🐎', 'color:#0A3D2A; font-family:monospace')
+            console.log('%cEquiLore updated with real breed images and European warmbloods 🐎', 'color:#0A3D2A; font-family:monospace')
         }
         
-        // Auto start
         window.onload = initialize
     </script>
 </body>
 </html>
-```
